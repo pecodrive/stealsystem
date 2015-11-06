@@ -1,0 +1,149 @@
+<?php
+session_start();
+if (!isset($_SESSION["USERID"])) {
+    header("Location: logout.php");
+    exit;
+}
+require_once(dirname(__file__) . '/functions.php');
+require_once(dirname(dirname(__file__)) . '/wp-load.php');
+date_default_timezone_set('Asia/Tokyo');
+
+$queryList           = getSQLQuery(getPDO());
+$censorList          = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);
+$regexList           = getRegex(getPDO(), $queryList["SELECT_REGEX"]);
+$fixedList           = getFix(getPDO(), $queryList["SELECT_FIX"]); 
+
+$request             = json_decode(file_get_contents( "php://input" ) , true);
+$requestThreadSha    = $request["threadsha"];
+$reTitle             = $request["retitle"];
+unset($request["retitle"]);
+$threadData          = getThreadDataBySha(getPDO(), $requestThreadSha, $queryList["SELECT_THREAD_BY_THREADSHA"]); 
+$resData             = getResData(getPDO(), $requestThreadSha, $queryList["SELECT_RES"]); 
+$sortedResData       = sortResByAnkaer($resData);
+$menuDefaultName     = getMenuDefaultName(getPDO(), $threadData["menu_id"], $queryList["SELECT_MENU_FOR_MENUID"]);
+$menuDefaultName     = $menuDefaultName ? $menuDefaultName : "名無しさん";
+// var_dump($menuDefaultName);
+
+$i = 0;
+foreach ($request["choiced"] as $key => $value) {
+    if($key !== "reTitle"){
+        if($request["choiced"][$key]["remove"] === true){
+            unset($sortedResData[$i]); 
+        }
+        $i++;
+    }
+}
+$html = null;
+$html .= "<dl class=\"thread\">";
+$resMasterID = $sortedResData[0]["res_id"];
+foreach ($sortedResData as $value) {
+    if(empty(unserialize($value["res_imgtag"])[0])){
+        $body = $value["res_body"];
+    }else{
+        $imgData       = unserialize($value["res_imgtag"]);
+        $countOfImgTag = count($imgData);
+        for ($i=0; $i < $countOfImgTag; $i++) {
+            $filename = $imgData[$i]["img_name"];
+            $url      = $imgData[$i]["img_url"];
+            $savePath = $fixedList["imgSavePath"].$filename;
+
+            $inputImgSize = getimagesize($url);
+            if($inputImgSize !== false){
+                if($inputImgSize["mime"] === "image/jpeg"){
+                    $img = imagecreatefromjpeg($url);
+                    $newImg = sizeSet($inputImgSize, $img);
+                    imagejpeg($newImg, $savePath, 50);
+                    imagedestroy($newImg);
+                }elseif($inputImgSize["mime"] === "image/png"){
+                    $img = imagecreatefrompng($url);
+                    $newImg = sizeSet($inputImgSize, $img);
+                    imagepng($newImg, $savePath, 9);
+                    imagedestroy($newImg);
+                }elseif($inputImgSize["mime"] === "image/gif"){
+                    $img = file_get_contents($url);
+                    file_put_contents($savePath, $img);
+                }
+            }else{
+                $img = file_get_contents($fixedList["noimageUrl"]);
+                if(preg_match("/(.jpg)?(.jpeg)?/", $filename, $match)){
+                    file_put_contents($savePath, $img);
+                }elseif(preg_match("/(.png)?/", $filename, $match)){
+                    $img = file_get_contents($url);
+                    file_put_contents($savePath, $img);
+                }elseif(preg_match("/(.gif)?/", $filename, $match)){
+                    $img = file_get_contents($url);
+                    file_put_contents($savePath, $img);
+                }
+            }
+        }
+        $body = $value["res_body"];
+    }
+
+    $html .= 
+        "<dt class=\"reshandle\">" .
+        "<span class=\"resno\">" .
+        $value["res_no"] .
+        "</span>" .
+        "<span class=\"resname\">" .
+        $menuDefaultName .
+        // $request["choiced"][$value["res_sha"]]["name"] .
+        "</span>" .
+        "<span class=\"resdate\">" .
+        $value["res_date"] .
+        "</span>" .
+        "<span class=\"resclock\">" .
+        $value["res_clock"];
+    if($value["res_id"] === $resMasterID){
+        $html .= 
+        "</span>" .
+        "<span class=\"resid resmasterid\">" .
+        $value["res_id"] . 
+        "</span>" .
+        "</dt>" .
+        "<dd class=\"resbody resmasterbody\">" . 
+        $body .
+        "</dd>";
+    }else{
+        $html .= 
+        "</span>" .
+        "<span class=\"resid\">" .
+        $value["res_id"] . 
+        "</span>" .
+        "</dt>" .
+        "<dd class=\"resbody\">" . 
+        $body .
+        "</dd>";
+    }
+}
+$html .= "</dl>";
+$html .= "<span class=\"threadurldis\">元スレ</span>";
+$html .= "<span class=\"threadurl\"><a href=\"{$threadData["thread_url"]}\">{$threadData["thread_title"]}({$threadData["kind"]})</a></span>";
+
+if($threadData["kind"] === "open2ch.net"){
+    array_push($request["category"], 150);
+}else{
+    if($threadData["net_or_sc"] === "net"){
+        array_push($request["category"], 152);
+    }else{
+        array_push($request["category"], 151);
+    }
+}
+$date = date("Y-m-d H:i:s", strtotime('+5 minute'));
+
+$post = array(
+    'post_content'   =>  $html, 
+    'post_title'     =>  $reTitle,
+    'post_status'    =>  'publish',
+    'post_date'      =>  $date,
+    'comment_status' =>  'future', 
+    'post_category'  =>  $request["category"], // 投稿カテゴリー。デフォルトは空（カテゴリーなし）。
+);
+
+threadUpdateToArticled(getPDO(), $requestThreadSha, $queryList["UPDATE_THREAD_ARTICLED"]);
+
+wp_insert_post($post);
+
+$html = "<h1>{$reTitle}</h1>".$html;
+header( "Content-Type: text/html; X-Content-Type-Options: nosniff; charset=utf-8" );
+echo $html;
+die();

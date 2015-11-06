@@ -1,0 +1,133 @@
+    *{
+        box-sizing: border-box;
+    }
+    img{
+        max-width: 400px;
+        height: auto;
+    }
+    span{
+        float: left;
+        }
+    #thread div{
+        width: 100%;
+        margin: 0 0 10px 0;
+        padding: 20px;
+        border: 1px solid #000;
+        cursor: pointer;
+        float: left;
+
+    }
+
+    span.endres{
+        margin:1% 1% 0 3%;
+        width:96%;
+        padding: 5px 5px;
+        border:1px solid #ccc;
+        float:left;
+    }
+
+    span.botton{
+        margin:1% 1% 0 3%;
+        width:96%;
+        padding: 5px 5px;
+        border:1px solid #ccc;
+        float:left;
+    }
+    span.kind{
+        float:left;
+        padding: 0px 20px 10px 20px;
+
+    }
+
+    span.deleted,
+    span.submited{
+        margin:0 2% 0 0;
+        width:15%;
+        padding: 10px 20px;
+        border:1px solid #ccc;
+        float:left;
+    }
+    span.threadTitle{
+        width: 100%;
+        padding: 0px 20px 0px 20px;
+        float: left;
+    }
+    span.reTitle{
+        width: 96%;
+        margin:1% 1% 1% 3%;
+        float: left;
+    }
+    span.rename{
+        width: 100%;
+        margin-bottom:10px;
+        padding: 0px 20px 10px 20px;
+        color: #999999;
+        float: left;
+    }
+    span.censor{
+        width: 100%;
+        margin-bottom:10px;
+        padding: 0px 20px 10px 20px;
+        float: left;
+    }
+    span.inputtool{
+        margin:0 2% 0 2%;
+        width:60%;
+        padding: 5px 5px;
+        background-color:#eee;
+        border:1px solid #ccc;
+        float:left;
+    }
+    span.word,
+    span.becensor{
+        margin:0 5px 0 0;
+        float: left;
+    }
+    span.swich{
+        margin:0 5px 0 0;
+        float: left;
+    }
+    span.manualcensor{
+        margin:0 2% 0 0;
+        width:10%;
+        border:1px solid #ccc;
+        float:left;
+    }
+    span.responce{
+        color: #220000;
+        font-weight: 900;
+        cursor: pointer;
+        width: 100%;
+        padding: 0px 20px 0px 20px;
+        float: left;
+    }
+    span.responcewp{
+        width: 100%;
+        float: left;
+    }
+    span.category{
+        margin: 4px;
+        padding: 4px;
+        border: 1px solid #000;
+        float: left;
+    }
+    dl.thread{
+        width: 100%;
+        float: left;
+    }
+    dt.reshandle{
+        width: 100%;
+        float: left;
+    } 
+    .rename span{
+        float:left;
+
+    }
+    span.resmaster{
+        font-weight:900;
+        color:#00aa00;
+    }
+    dd.resbody{
+        width: 100%;
+        float: left;
+    }

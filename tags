@@ -1,0 +1,361 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ResData	functions.php	/^    $ResData = [];$/;"	v
+ankaerLinkProced	functions.php	/^        $ankaerLinkProced =$/;"	v
+ankaerLinkProced	thread.php	/^            $ankaerLinkProced =$/;"	v
+anySite	functions.php	/^function anySite(){$/;"	f
+args	main.php	/^$args = array($/;"	v
+args	resajax.php	/^$args = array($/;"	v
+array	ankaertest.php	/^$array = [1=>[],2=>[],3=>[],4=>[2],5=>[],6=>[],7=>[6],8=>[],9=>[],10=>[6],11=>[],12=>[8],13=>[10],14=>[],15=>[10],16=>[13]];$/;"	v
+articled	functions.php	/^    $articled = 1;$/;"	v
+beCensor	functions.php	/^    $beCensor = $be_censor;$/;"	v
+body	articleajax.php	/^        $body = $value["res_body"];$/;"	v
+body	resajax.php	/^        $body = "{$sortedResData[$k]["res_body"]}"; $/;"	v
+body	resajax.php	/^        $body = "{$sortedResData[$k]["res_rowbody"]}"; $/;"	v
+bool	functions.php	/^    $bool = preg_match("\/net\/", $res_id, $match);$/;"	v
+bottom	ankaertest.php	/^                    $bottom  = array_slice($reArray, $reArrayIndex + 2, $lengthOfReArray - $reArrayIndex); $/;"	v
+bottom	ankaertest.php	/^            $bottom          = array_slice($reArray, $reArrayIndex + 1, $lengthOfReArray - $reArrayIndex); $/;"	v
+bottom	functions.php	/^                $bottom  = array_slice($reArray, $reArrayIndex + 1, $lengthOfReArray - $reArrayIndex); $/;"	v
+bottom	functions.php	/^                $bottom  = array_slice($reArray, ($reArrayIndex + 1) + $sameCount, $lengthOfReArray - $reArrayIndex); $/;"	v
+category	main.php	/^$category = get_categories($args);$/;"	v
+category	resajax.php	/^$category = "<div>\\n";$/;"	v
+cats	resajax.php	/^$cats = get_categories($args);$/;"	v
+censorList	articleajax.php	/^$censorList          = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);$/;"	v
+censorList	deleteajax.php	/^$censorList = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);$/;"	v
+censorList	main.php	/^$censorList      = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);$/;"	v
+censorList	resajax.php	/^$censorList              = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);$/;"	v
+censorList	resbodymanualcensorajax.php	/^$censorList              = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);$/;"	v
+censorList	thread.php	/^$censorList     = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);$/;"	v
+censorShip	functions.php	/^function censorShip($censoredString, $censorList){$/;"	f
+censorShipForRes	functions.php	/^function censorShipForRes($resDataArray, $censorList){$/;"	f
+censorWord	functions.php	/^    $censorWord= $formatCensor_word;$/;"	v
+censored	functions.php	/^            $censored            = preg_match($value["censor_word"], $resDataArray[$i]["res_body"], $macth);$/;"	v
+censored	functions.php	/^        $censored        = $value["censored"];$/;"	v
+censoredProced	functions.php	/^        $censoredProced =$/;"	v
+censoredProced	thread.php	/^            $censoredProced =$/;"	v
+censoredResBody	resbodymanualcensorajax.php	/^$censoredResBody = resBodyCensorProc$/;"	v
+censoredString	functions.php	/^        $censoredString = preg_replace($value["censor_word"], $value["be_censored"], $censoredString);$/;"	v
+censored_Res_Body	functions.php	/^    $censored_Res_Body = preg_replace($formatCensor_word, $be_censored, $resBody);$/;"	v
+countOfArray	ankaertest.php	/^    $countOfArray = count($array);$/;"	v
+countOfArray	functions.php	/^    $countOfArray = count($array);$/;"	v
+countOfImgTag	articleajax.php	/^        $countOfImgTag = count($imgData);$/;"	v
+countOfMenuList	functions.php	/^    $countOfMenuList = count($menuList);$/;"	v
+countOfResAnkaerLink	functions.php	/^        $countOfResAnkaerLink = count($resAnkaerLink);$/;"	v
+countOfResBodyByResData	functions.php	/^    $countOfResBodyByResData = count($tempResBodyByResData);$/;"	v
+countOfResData	functions.php	/^    $countOfResData = count($resData);$/;"	v
+countOfResDataArray	functions.php	/^        $countOfResDataArray = count($resDataArray);\/\/MAX RES number.$/;"	v
+countOfResDataArray	functions.php	/^    $countOfResDataArray = count($resDataArray);$/;"	v
+countOfResDataArray	thread.php	/^            $countOfResDataArray = count($resDataArray);\/\/MAX RES number.$/;"	v
+countOfResImgLink	functions.php	/^        $countOfResImgLink = count($resImgLink);$/;"	v
+countOfSortedResData	resajax.php	/^$countOfSortedResData    = count($sortedResData);$/;"	v
+datetime	functions.php	/^        $datetime             = date("Y-m-d H:i:s");$/;"	v
+datetime	functions.php	/^        $datetime        = date("Y-m-d H:i:s");$/;"	v
+datetime	functions.php	/^        $datetime      = date("Y-m-d H:i:s");$/;"	v
+datetime	functions.php	/^        $datetime     = date("Y-m-d H:i:s");$/;"	v
+dbHandle	functions.php	/^    $dbHandle = new PDO($dbname, $dbuser, $dbpass);$/;"	v
+dbHandle	functions.php	/^    $dbHandle = null;$/;"	v
+dbname	functions.php	/^$dbname = "mysql:dbname=matome;host=localhost";$/;"	v
+dbpass	functions.php	/^$dbpass = "iop26yui";$/;"	v
+dbuser	functions.php	/^$dbuser = "matomeuser";$/;"	v
+diff	functions.php	/^            $diff = round(($pres[$i] - $pres[$i - 1]), 5);$/;"	v
+encode	functions.php	/^        $encode = mb_detect_encoding($html);$/;"	v
+encode	functions.php	/^        $encode = mb_detect_encoding($resBaseHtml);$/;"	v
+encodiedMenuListBaseHtml	functions.php	/^            $encodiedMenuListBaseHtml = $html;$/;"	v
+encodiedMenuListBaseHtml	functions.php	/^            $encodiedMenuListBaseHtml = mb_convert_encoding($html, "UTF-8", "SJIS");$/;"	v
+encodiedResBaseHtml	functions.php	/^            $encodiedResBaseHtml = $resBaseHtml;$/;"	v
+encodiedResBaseHtml	functions.php	/^            $encodiedResBaseHtml = mb_convert_encoding($resBaseHtml, "UTF-8", "SJIS,UTF-8");$/;"	v
+encodiedResBaseHtml	functions.php	/^        $encodiedResBaseHtml    = resSteal($value["thread_url"]);$/;"	v
+encodiedResBaseHtml	thread.php	/^            $encodiedResBaseHtml = resSteal($value["thread_url"]);$/;"	v
+encodiedThreadBaseHtml	functions.php	/^            $encodiedThreadBaseHtml = $html;$/;"	v
+encodiedThreadBaseHtml	functions.php	/^            $encodiedThreadBaseHtml = mb_convert_encoding($html, "UTF-8", "SJIS,UTF-8");$/;"	v
+encodiedThreadBaseHtml	thread.php	/^        $encodiedThreadBaseHtml = threadSteal($threadList);$/;"	v
+endResData	main.php	/^    $endResData = $prepare->fetchAll();$/;"	v
+endResDate	main.php	/^        $endResDate = ["res_date"=>$value["res_date"], "res_clock"=>$value["res_clock"]];$/;"	v
+endResDate	main.php	/^    $endResDate = [];$/;"	v
+endResDate	main.php	/^    $endResDate = getEndResUpDate(getPDO(), $item["thread_sha"], $item["res_end"], $queryList["SELECT_RES_FOR_ENDRES"]);$/;"	v
+endToStart	functions.php	/^    $endToStart = $times['ProcEnd'] - $times['ProcStart'];$/;"	v
+filename	articleajax.php	/^            $filename = $imgData[$i]["img_name"];$/;"	v
+fixedList	articleajax.php	/^$fixedList           = getFix(getPDO(), $queryList["SELECT_FIX"]); $/;"	v
+fixedList	deleteajax.php	/^$fixedList  = getFix(getPDO(), $queryList["SELECT_FIX"]); $/;"	v
+fixedList	main.php	/^$fixedList       = getFix(getPDO(), $queryList["SELECT_FIX"]); $/;"	v
+fixedList	resajax.php	/^$fixedList               = getFix(getPDO(), $queryList["SELECT_FIX"]); $/;"	v
+fixedList	resbodymanualcensorajax.php	/^$fixedList               = getFix(getPDO(), $queryList["SELECT_FIX"]); $/;"	v
+fixedList	thread.php	/^$fixedList      = getFix(getPDO(), $queryList["SELECT_FIX"]); $/;"	v
+formatCensor_word	functions.php	/^    $formatCensor_word = "\/" . $censor_word . "\/";$/;"	v
+formatCensor_word	functions.php	/^    $formatCensor_word = "\/".$censor_word."\/";$/;"	v
+getCensorList	functions.php	/^function getCensorList($dbHandle, $query){$/;"	f
+getDiFix	functions.php	/^function getDiFix($dbHandle, $fix_name, $_kind, $prepareSt){$/;"	f
+getDiRegex	functions.php	/^function getDiRegex($dbHandle, $regex_name, $_kind, $prepareSt){$/;"	f
+getEndResUpDate	main.php	/^function getEndResUpDate($dbHandle, $thread_sha, $res_end, $prepareSt){$/;"	f
+getFix	functions.php	/^function getFix($dbHandle, $query){$/;"	f
+getLoggingData	functions.php	/^function getLoggingData($dbHandle){$/;"	f
+getMenu	functions.php	/^function getMenu($dbHandle, $query){$/;"	f
+getMenuDefaultName	functions.php	/^function getMenuDefaultName($dbHandle, $menu_id, $prepareSt){$/;"	f
+getMenuList	functions.php	/^function getMenuList($dbHandle, $query){$/;"	f
+getMenuListForProcOrder	functions.php	/^function getMenuListForProcOrder($dbHandle, $query){$/;"	f
+getPDO	functions.php	/^function getPDO(){$/;"	f
+getProcLockData	functions.php	/^function getProcLockData($dbHandle, $query){$/;"	f
+getProced	functions.php	/^function getProced($dbHandle, $menuList){$/;"	f
+getRegex	functions.php	/^function getRegex($dbHandle, $query){$/;"	f
+getResArray	functions.php	/^function getResArray($resStealRegex, $encodiedResBaseHtml, $threadSha){$/;"	f
+getResData	functions.php	/^function getResData($dbHandle, $thread_sha, $prepareSt){$/;"	f
+getSQLQuery	functions.php	/^function getSQLQuery($dbHandle){$/;"	f
+getThreadBaseUrl	functions.php	/^function getThreadBaseUrl($menuUrl, $fixListMidfix, $regex){$/;"	f
+getThreadData	functions.php	/^function getThreadData($dbHandle, $menu_id, $prepareSt){$/;"	f
+getThreadDataAll	functions.php	/^function getThreadDataAll($dbHandle, $prepareSt){$/;"	f
+getThreadDataBySha	functions.php	/^function getThreadDataBySha($dbHandle, $thread_sha, $prepareSt){$/;"	f
+getThreadListUrl	functions.php	/^function getThreadListUrl($menuUrl, $fixListSuffix){$/;"	f
+h	functions.php	/^        $h = $inputImgSize[1] * $rasio;$/;"	v
+html	articleajax.php	/^$html = "<h1>{$reTitle}<\/h1>".$html;$/;"	v
+html	articleajax.php	/^$html = null;$/;"	v
+html	functions.php	/^        $html   = file_get_contents($menuUrl);$/;"	v
+html	functions.php	/^        $html = file_get_contents($threadListUrl);$/;"	v
+html	resajax.php	/^$html                    = "";$/;"	v
+html	testpreg.php	/^$html = file_get_contents("http:\/\/anago.open2ch.net\/test\/read.cgi\/dqnplus\/1428717252");$/;"	v
+html	thread.php	/^        $html           = menuSteal($value["menu_url"]);$/;"	v
+i	articleajax.php	/^$i = 0;$/;"	v
+i	functions.php	/^    $i    = 0;$/;"	v
+i	functions.php	/^    $i = 0;$/;"	v
+i	thread.php	/^        $i = 0;$/;"	v
+img	articleajax.php	/^                    $img = file_get_contents($url);$/;"	v
+img	articleajax.php	/^                    $img = imagecreatefromjpeg($url);$/;"	v
+img	articleajax.php	/^                    $img = imagecreatefrompng($url);$/;"	v
+img	articleajax.php	/^                $img = file_get_contents($fixedList["noimageUrl"]);$/;"	v
+imgData	articleajax.php	/^        $imgData       = unserialize($value["res_imgtag"]);$/;"	v
+imgData	resajax.php	/^    $imgData = unserialize($sortedResData[$k]["res_imgtag"]);$/;"	v
+imgLinkProced	functions.php	/^        $imgLinkProced  =$/;"	v
+imgLinkProced	thread.php	/^            $imgLinkProced  =$/;"	v
+imgReUrl	functions.php	/^            $imgReUrl                    = $imgBaseUrl . $shaedImgFileName;$/;"	v
+imgUrlForView	functions.php	/^            $imgUrlForView               = preg_replace("\/2ch\\.io\\\/\/", "", $resImgLink[$k][1]); $/;"	v
+inputImgSize	articleajax.php	/^            $inputImgSize = getimagesize($url);$/;"	v
+insertCensorWord	functions.php	/^function insertCensorWord($dbHandle, $censor_word, $be_censor, $prepareSt){$/;"	f
+isImg	functions.php	/^        $isImg = preg_match_all($regex, $tempResBodyByResData[$i]["res_body"], $resImgLink, PREG_SET_ORDER);$/;"	v
+isImg	functions.php	/^    $isImg = 1;$/;"	v
+isMenuSteal	thread.php	/^$isMenuSteal    = true;$/;"	v
+isProc	thread.php	/^$isProc         = true;$/;"	v
+isResSteal	thread.php	/^$isResSteal     = true;$/;"	v
+isThreadSteal	thread.php	/^$isThreadSteal  = true;$/;"	v
+is_oldlog	functions.php	/^    $is_oldlog    = 1;$/;"	v
+is_proclock	functions.php	/^        $is_proclock = $value["is_proclock"];$/;"	v
+is_proclock	functions.php	/^    $is_proclock = [];$/;"	v
+isoldLog	functions.php	/^        $isoldLog               = threadIsOldLog($encodiedResBaseHtml, $threadOldLogedRegex);$/;"	v
+isoldLog	thread.php	/^            $isoldLog = threadIsOldLog$/;"	v
+isoldLoged	functions.php	/^    $isoldLoged = preg_match($regex, $html, $match);$/;"	v
+j	main.php	/^    static $j = 1;$/;"	v
+jsonData	deleteajax.php	/^$jsonData = json_encode($threadSha);$/;"	v
+jsonData	resajax.php	/^$jsonData = json_encode( array($html, $category, $k, $resSha) );$/;"	v
+jsonData	resbodymanualcensorajax.php	/^$jsonData = json_encode($censoredResBody);$/;"	v
+kind	functions.php	/^        $kind                 = $_kind;$/;"	v
+kind	functions.php	/^        $kind            = $_kind;$/;"	v
+kind	functions.php	/^        $kind          = $_kind;$/;"	v
+kind	functions.php	/^        $kind = "net";$/;"	v
+kind	functions.php	/^        $kind = "sc";$/;"	v
+kind	functions.php	/^    $kind     = $_kind;$/;"	v
+kind	main.php	/^    $kind = "{$item["kind"]} {$item["net_or_sc"]}";$/;"	v
+kindChecher	functions.php	/^function kindChecher($res_id){$/;"	f
+lengthOfReArray	ankaertest.php	/^            $lengthOfReArray = count($reArray);$/;"	v
+lengthOfReArray	functions.php	/^            $lengthOfReArray = count($reArray);$/;"	v
+lengthOfUpper	ankaertest.php	/^            $lengthOfUpper   = count($upper);$/;"	v
+list	functions.php	/^        $list = $value["fix"];$/;"	v
+list	functions.php	/^        $list = $value["regex"];$/;"	v
+list	functions.php	/^    $list = "";$/;"	v
+list	functions.php	/^    $list = [];$/;"	v
+logingData	index.php	/^$logingData = getLoggingData(getPDO());$/;"	v
+maxwidthsize	functions.php	/^    $maxwidthsize = 1000;$/;"	v
+memoryGetUse	functions.php	/^function memoryGetUse($ankaer){$/;"	f
+memoryPeakUse	functions.php	/^function memoryPeakUse($ankaer){$/;"	f
+menuData	functions.php	/^    $menuData = $prepare->fetchAll();$/;"	v
+menuData	resajax.php	/^$menuData                = getMenuDefaultName(getPDO(), $threadData["menu_id"], $queryList["SELECT_MENU_FOR_MENUID"]);$/;"	v
+menuData	thread.php	/^    $menuData  = getProced(getPDO(), $menuList);$/;"	v
+menuDataArray	functions.php	/^    $menuDataArray = menuReArray$/;"	v
+menuDataPregMatch	functions.php	/^function menuDataPregMatch($encodiedMenuBaseHtml, $menuStealRegex){$/;"	f
+menuDataProc	functions.php	/^function menuDataProc ($dbHandle, $menuListUrl, $kind, $menuStealRegex, $menuQuery) {$/;"	f
+menuDefaultName	articleajax.php	/^$menuDefaultName     = $menuDefaultName ? $menuDefaultName : "名無しさん";$/;"	v
+menuDefaultName	articleajax.php	/^$menuDefaultName     = getMenuDefaultName(getPDO(), $threadData["menu_id"], $queryList["SELECT_MENU_FOR_MENUID"]);$/;"	v
+menuId	functions.php	/^        $menuId       = $menu_id;$/;"	v
+menuId	functions.php	/^    $menuId     = $menu_id;$/;"	v
+menuInsert	functions.php	/^function menuInsert($dbHandle, $menuDataArray, $_kind, $prepareSt){$/;"	f
+menuList	functions.php	/^    $menuList = $prepare->fetchAll();$/;"	v
+menuList	thread.php	/^    $menuList  = getMenuListForProcOrder(getPDO(), $queryList["SELECT_MENU_FOR_PROCORDER"]);$/;"	v
+menuListArray	thread.php	/^        $menuListArray  = menuReArray(menuDataPregMatch($html, $regex)); $/;"	v
+menuReArray	functions.php	/^function menuReArray($tempMenuData){$/;"	f
+menuSteal	functions.php	/^function menuSteal($menuUrl){$/;"	f
+menuStealBool	functions.php	/^        $menuStealBool = preg_match_all($menuStealRegex, $encodiedMenuBaseHtml, $menuData, PREG_SET_ORDER);$/;"	v
+menuTitle	functions.php	/^        $menuTitle    = $menu_title;$/;"	v
+menuUrl	thread.php	/^$menuUrl        = getMenu(getPDO(), $queryList["SELECT_MENUURL"]);$/;"	v
+menu_id	functions.php	/^        $menu_id              = $menuId;$/;"	v
+menu_title	functions.php	/^        $menu_title    = $value["menu_title"];$/;"	v
+menu_url	functions.php	/^        $menu_url      = $value["menu_url"];$/;"	v
+mod	functions.php	/^    $mod = $newProced % $countOfMenuList;$/;"	v
+name	functions.php	/^    $name     = $fix_name;$/;"	v
+name	functions.php	/^    $name     = $regex_name;$/;"	v
+name	resajax.php	/^$name                    = $menuData ? $menuData : "名無しさん";$/;"	v
+netOrSc	functions.php	/^    $netOrSc   = $net_or_sc;$/;"	v
+net_or_sc	functions.php	/^        $net_or_sc       = $value["net_or_sc"];$/;"	v
+net_or_sc_kind	functions.php	/^        $net_or_sc_kind = kindChecher($censoredProced[0]["res_id"]);$/;"	v
+net_or_sc_kind	thread.php	/^            $net_or_sc_kind = kindChecher($censoredProced[0]["res_id"]);$/;"	v
+newImg	articleajax.php	/^                    $newImg = sizeSet($inputImgSize, $img);$/;"	v
+newImg	functions.php	/^        $newImg = imagecreatetruecolor($w, $h);$/;"	v
+newProced	functions.php	/^    $newProced = $proced + 1;$/;"	v
+passSha	index.php	/^    $passSha = sha1($_POST["password"]);$/;"	v
+post	articleajax.php	/^$post = array($/;"	v
+prepare	functions.php	/^    $prepare      = $dbHandle->prepare($prepareSt);$/;"	v
+prepare	functions.php	/^    $prepare    = $dbHandle->prepare($prepareSt);$/;"	v
+prepare	functions.php	/^    $prepare  = $dbHandle->prepare($prepareSt);$/;"	v
+prepare	functions.php	/^    $prepare  = $dbHandle->prepare($prepareStSELECT);$/;"	v
+prepare	functions.php	/^    $prepare = $dbHandle->prepare("UPDATE matome.proclock SET proced = :proced WHERE id = 0;"); $/;"	v
+prepare	functions.php	/^    $prepare = $dbHandle->prepare($prepareSt);$/;"	v
+prepare	functions.php	/^    $prepare = $dbHandle->prepare($query); $/;"	v
+prepare	functions.php	/^    $prepare =$dbHandle->prepare($prepareSt);$/;"	v
+prepare	main.php	/^    $prepare =$dbHandle->prepare($prepareSt);$/;"	v
+procLockCheck	functions.php	/^function procLockCheck($dbHandle){$/;"	f
+procLockData	main.php	/^$procLockData    = getProcLockData(getPDO(), $queryList["SELECT_PROCLOCK"]);$/;"	v
+procLocking	functions.php	/^function procLocking($dbHandle){$/;"	f
+procRecode	functions.php	/^function procRecode($dbHandle, $menu_id, $menuTitle, $prepareSt){$/;"	f
+procTime	functions.php	/^    $procTime = [];$/;"	v
+procUnLocking	functions.php	/^function procUnLocking($dbHandle){$/;"	f
+proced	functions.php	/^        $proced = $value["proced"];$/;"	v
+proced	functions.php	/^    $proced = [];$/;"	v
+proclock	functions.php	/^    $proclock = $dbHandle->query("SELECT is_proclock FROM proclock;");$/;"	v
+proclockData	functions.php	/^    $proclockData = $proclock->fetchAll();$/;"	v
+queryList	articleajax.php	/^$queryList           = getSQLQuery(getPDO());$/;"	v
+queryList	deleteajax.php	/^$queryList  = getSQLQuery(getPDO());$/;"	v
+queryList	main.php	/^$queryList       = getSQLQuery(getPDO());$/;"	v
+queryList	resajax.php	/^$queryList               = getSQLQuery(getPDO());$/;"	v
+queryList	resbodymanualcensorajax.php	/^$queryList               = getSQLQuery(getPDO());$/;"	v
+queryList	testpreg.php	/^$queryList      = getSQLQuery(getPDO());$/;"	v
+queryList	thread.php	/^$queryList      = getSQLQuery(getPDO());$/;"	v
+quotedAnkaerLink	functions.php	/^            $quotedAnkaerLink = "\/" . preg_quote($resAnkaerLink[$k][0],"\/") . "\/";$/;"	v
+quotedImgLink	functions.php	/^            $quotedImgLink               = "\/" . preg_quote($resImgLink[$k][0],"\/") . "\/";$/;"	v
+rasio	functions.php	/^        $rasio = $maxwidthsize \/ $inputImgSize[0]; $/;"	v
+reArray	ankaertest.php	/^            $reArray         = array_merge($upper,$bottom);$/;"	v
+reArray	ankaertest.php	/^    $reArray = [];$/;"	v
+reArray	functions.php	/^            $reArray = array_merge($upper,$bottom);$/;"	v
+reArray	functions.php	/^    $reArray = [];$/;"	v
+reArrayIndex	ankaertest.php	/^            $reArrayIndex    = array_search($array[$i][0], $reArray);$/;"	v
+reArrayIndex	functions.php	/^            $reArrayIndex = searchIndex($lengthOfReArray, $array, $reArray, $i);$/;"	v
+reArrayedMenuData	functions.php	/^    $reArrayedMenuData = [];$/;"	v
+reArrayedThreadData	functions.php	/^    $reArrayedThreadData = [];$/;"	v
+reTitle	articleajax.php	/^$reTitle             = $request["retitle"];$/;"	v
+regex	functions.php	/^    $regex = $prepare->fetchAll();$/;"	v
+regex	thread.php	/^        $regex          = getDiRegex(getPDO(), "menuStealRegex", $value["kind"], $queryList["SELECT_DIREGEX"]);$/;"	v
+regexGen	ext.php	/^function regexGen($regexName){$/;"	f
+regexList	articleajax.php	/^$regexList           = getRegex(getPDO(), $queryList["SELECT_REGEX"]);$/;"	v
+regexList	deleteajax.php	/^$regexList  = getRegex(getPDO(), $queryList["SELECT_REGEX"]);$/;"	v
+regexList	main.php	/^$regexList       = getRegex(getPDO(), $queryList["SELECT_REGEX"]);$/;"	v
+regexList	resajax.php	/^$regexList               = getRegex(getPDO(), $queryList["SELECT_REGEX"]);$/;"	v
+regexList	resbodymanualcensorajax.php	/^$regexList               = getRegex(getPDO(), $queryList["SELECT_REGEX"]);$/;"	v
+regexList	thread.php	/^$regexList      = getRegex(getPDO(), $queryList["SELECT_REGEX"]);$/;"	v
+request	articleajax.php	/^$request             = json_decode(file_get_contents( "php:\/\/input" ) , true);$/;"	v
+requestData	resbodymanualcensorajax.php	/^$requestData             = json_decode( file_get_contents( "php:\/\/input" ) , true );$/;"	v
+requestThreadSha	articleajax.php	/^$requestThreadSha    = $request["threadsha"];$/;"	v
+requestThreadSha	resajax.php	/^$requestThreadSha        = json_decode( file_get_contents( "php:\/\/input" ) , true );$/;"	v
+resAnkaerLinkTogetherBool	functions.php	/^            $resAnkaerLinkTogetherBool      = preg_match("\/-\/", $resAnkaerLink[$k][2], $match);$/;"	v
+resAnkaerMax	functions.php	/^            $resAnkaerMax = $resAnkaerNo[0];$/;"	v
+resAnkaerMax	functions.php	/^            $resAnkaerMax = null;$/;"	v
+resAnkaerNo	functions.php	/^        $resAnkaerNo = [];$/;"	v
+resArray	functions.php	/^    $resArray = [];$/;"	v
+resBaseHtml	functions.php	/^        $resBaseHtml = file_get_contents($threadUrl);$/;"	v
+resBody	functions.php	/^        $resBody = $value["res_body"];$/;"	v
+resBody	functions.php	/^    $resBody  = $censored_res_body;$/;"	v
+resBodyAnkaerLinkProc	functions.php	/^function resBodyAnkaerLinkProc($tempResBodyByResData, $resBodyAnkaerLinkStealRegex){$/;"	f
+resBodyAnkaerLinkStealRegex	ext.php	/^        $resBodyAnkaerLinkStealRegex = "\/<a\\shref=\\"[-\\.a-zA-Z0-9\\\/]+\\"\\starget=\\"_blank\\">(&gt;&gt;([0-9]{1,4}-?[0-9]{0,4}))<\\\/a>\/u";\/\/ankaer$/;"	v
+resBodyCensorProc	functions.php	/^function resBodyCensorProc($dbHandle, $censor_word, $be_censored, $res_sha, $prepareStSELECT){$/;"	f
+resBodyImgLinkProc	functions.php	/^function resBodyImgLinkProc($dbHandle, $tempResBodyByResData, $threadSha, $regex, $prepareStForTUTI, $imgBaseUrl){$/;"	f
+resBodyImgLinkStealRegex	ext.php	/^        $resBodyImgLinkStealRegex = "";$/;"	v
+resBodyManualCensorUpdert	functions.php	/^function resBodyManualCensorUpdert($dbHandle, $censored_res_body, $res_sha, $prepareSt){$/;"	f
+resData	articleajax.php	/^$resData             = getResData(getPDO(), $requestThreadSha, $queryList["SELECT_RES"]); $/;"	v
+resData	functions.php	/^        $resData  =$/;"	v
+resData	functions.php	/^    $resData = $prepare->fetchAll();$/;"	v
+resData	resajax.php	/^$resData                 = getResData(getPDO(), $requestThreadSha, $queryList["SELECT_RES"]); $/;"	v
+resData	thread.php	/^            $resData  =$/;"	v
+resDataArray	functions.php	/^        $resDataArray = $/;"	v
+resDataArray	thread.php	/^            $resDataArray = $/;"	v
+resDataProc	functions.php	/^function resDataProc ( $dbHandle, $threadData, $kind, $resStealRegex, $resBodyAnkaerLinkStealRegex, $resBodyImgLinkStealRegex, $threadOldLogedRegex, $prepareStForRI, $prepareStForTUPTR, $prepareStForTUIO, $prepareStForTUTI, $prepareStForTUNOS, $imgBaseUrl, $censorList){$/;"	f
+resDataReArray	functions.php	/^function resDataReArray($tempResBodyByResData, $net_or_sc){$/;"	f
+resEnd	main.php	/^    $resEnd = $res_end;$/;"	v
+resImgData	functions.php	/^        $resImgData = [];$/;"	v
+resImgReTag	functions.php	/^            $resImgReTag                 = "<img src=\\"{$imgReUrl}\\">";$/;"	v
+resImgTag	functions.php	/^        $resImgTag = "";$/;"	v
+resInsert	functions.php	/^function resInsert($dbHandle, $resDataArray, $_kind, $prepareSt){$/;"	f
+resMasterID	articleajax.php	/^$resMasterID = $sortedResData[0]["res_id"];$/;"	v
+resMasterID	resajax.php	/^    $resMasterID = $sortedResData[0]["res_id"];$/;"	v
+resSha	functions.php	/^    $resSha   = $res_sha;$/;"	v
+resSha	resajax.php	/^$resSha                  = null;$/;"	v
+resSteal	functions.php	/^function resSteal($threadUrl){$/;"	f
+resStealBool	functions.php	/^    $resStealBool = preg_match_all($resStealRegex, $encodiedResBaseHtml, $resData, PREG_SET_ORDER);$/;"	v
+resStealRegex	ext.php	/^        $resStealRegex  = "\/<dt>([0-9]{1,4})\\s\\W<[a-zA-Z]{1,7}\\s[a-zA-Z]{1,7}=.+><b>(.+)<\\\/b><\\\/[a-zA-Z]{1,7}>";\/\/handle$/;"	v
+res_body	functions.php	/^        $res_body        = $value["res_body"];$/;"	v
+res_clock	functions.php	/^        $res_clock       = $value["res_clock"];$/;"	v
+res_date	functions.php	/^        $res_date        = $value["res_date"];$/;"	v
+res_end	functions.php	/^    $res_end      = $DIres_end;$/;"	v
+res_id	functions.php	/^        $res_id          = $value["res_id"];$/;"	v
+res_imgtag	functions.php	/^        $res_imgtag      = serialize($value["res_imgtag"]);$/;"	v
+res_no	functions.php	/^        $res_no          = $value["res_no"];$/;"	v
+res_rowbody	functions.php	/^        $res_rowbody     = $value["res_rowbody"];$/;"	v
+res_seq	functions.php	/^        $res_seq         = $value["res_seq"];$/;"	v
+res_sha	functions.php	/^        $res_sha         = $value["res_sha"];$/;"	v
+res_username	functions.php	/^        $res_username    = $value["res_username"];$/;"	v
+sameCount	functions.php	/^            $sameCount = 0;$/;"	v
+savePath	articleajax.php	/^            $savePath = $fixedList["imgSavePath"].$filename;$/;"	v
+searchIndex	functions.php	/^function searchIndex($lengthOfReArray, $array, $reArray, $i){$/;"	f
+selectedResData	functions.php	/^    $selectedResData = $prepare->fetchAll();$/;"	v
+shaedImgFileName	functions.php	/^            $shaedImgFileName            = $tempResBodyByResData[$i]["res_no"] . "_" . $k . "_" . sha1($resImgLink[$k][0]) . $resImgLink[$k][2];$/;"	v
+shaedImgFileName	functions.php	/^        $shaedImgFileName = "";$/;"	v
+sizeSet	functions.php	/^function sizeSet($inputImgSize, $img) {$/;"	f
+sortResByAnkaer	ankaertest.php	/^function sortResByAnkaer($array){$/;"	f
+sortResByAnkaer	functions.php	/^function sortResByAnkaer($array){$/;"	f
+sortedResData	articleajax.php	/^$sortedResData       = sortResByAnkaer($resData);$/;"	v
+sortedResData	resajax.php	/^$sortedResData           = sortResByAnkaer($resData);$/;"	v
+splitedAnkaer	functions.php	/^                $splitedAnkaer      = preg_split("\/-\/", $resAnkaerLink[$k][2]);$/;"	v
+splitedAnkaerCount	functions.php	/^                $splitedAnkaerCount = count($splitedAnkaer);$/;"	v
+tags	thread.php	/^$tags = [];$/;"	v
+threadBaseUrl	functions.php	/^    $threadBaseUrl = $match[1] . $fixListMidfix . $match[2] . "\/";$/;"	v
+threadData	articleajax.php	/^$threadData          = getThreadDataBySha(getPDO(), $requestThreadSha, $queryList["SELECT_THREAD_BY_THREADSHA"]); $/;"	v
+threadData	functions.php	/^    $threadData = $prepare->fetchAll();$/;"	v
+threadData	main.php	/^$threadData      = getThreadDataAll(getPDO(), $queryList["SELECT_THREAD_FOR_MAIN"]);$/;"	v
+threadData	resajax.php	/^$threadData              = getThreadDataBySha(getPDO(), $requestThreadSha, $queryList["SELECT_THREAD_BY_THREADSHA"]); $/;"	v
+threadData	thread.php	/^        $threadData =  $/;"	v
+threadData	thread.php	/^        $threadData = getThreadData(getPDO(), $menuData["id"], $queryList["SELECT_THREAD"]);$/;"	v
+threadDataArray	functions.php	/^$threadDataArray = threadReArray$/;"	v
+threadDataCount	main.php	/^$threadDataCount = count($threadData);$/;"	v
+threadDataPregMatch	functions.php	/^function threadDataPregMatch($encodiedThreadBaseHtml, $threadStealRegex){$/;"	f
+threadDataProc	functions.php	/^function threadDataProc$/;"	f
+threadInsert	functions.php	/^function threadInsert($dbHandle, $resDataArray, $menuId, $_kind, $prepareSt){$/;"	f
+threadIsOldLog	functions.php	/^function threadIsOldLog($html, $regex){$/;"	f
+threadList	thread.php	/^        $threadList = $/;"	v
+threadReArray	functions.php	/^function threadReArray($tempThreadData, $threadUrlBase, $censorList){$/;"	f
+threadSha	deleteajax.php	/^$threadSha  = json_decode( file_get_contents( "php:\/\/input" ) , true );$/;"	v
+threadSha	functions.php	/^    $threadSha  = $thread_sha;$/;"	v
+threadSha	functions.php	/^    $threadSha = $thread_sha;$/;"	v
+threadSha	main.php	/^    $threadSha = $thread_sha;$/;"	v
+threadSteal	functions.php	/^function threadSteal($threadListUrl){$/;"	f
+threadStealBool	functions.php	/^        $threadStealBool = preg_match_all($threadStealRegex, $encodiedThreadBaseHtml, $threadData, PREG_SET_ORDER);$/;"	v
+threadStealRegex	ext.php	/^        $threadStealRegex = "\/<a\\shref=\\"([0-9]+)\\\/l50\\">[0-9]+:\\s(.+)\\W\\(([0-9]{1,4})\\)<\\\/a>\/";$/;"	v
+threadUpdateToArticled	functions.php	/^function threadUpdateToArticled($dbHandle, $thread_sha, $prepareSt){$/;"	f
+threadUpdateToRes_end	functions.php	/^function threadUpdateToRes_end($dbHandle, $DIthread_sha, $DIres_end, $prepareSt){$/;"	f
+threadUpdateTois_img	functions.php	/^function threadUpdateTois_img($dbHandle, $thread_sha, $prepareSt){$/;"	f
+threadUpdateTois_oldlog	functions.php	/^function threadUpdateTois_oldlog($DIthread_sha, $prepareSt, $dbHandle){$/;"	f
+threadUpdateTonet_or_sc	functions.php	/^function threadUpdateTonet_or_sc($dbHandle, $net_or_sc, $thread_sha, $prepareSt){$/;"	f
+threadUrl	functions.php	/^    $threadUrl = $menuUrl . $fixListSuffix;$/;"	v
+threadUrl	thread.php	/^        $threadUrl = $/;"	v
+thread_now_res_no	functions.php	/^        $thread_now_res_no    = $value["thread_now_res_no"];$/;"	v
+thread_sha	functions.php	/^        $thread_sha           = $value["thread_sha"];$/;"	v
+thread_sha	functions.php	/^        $thread_sha      = $value["thread_sha"];$/;"	v
+thread_sha	functions.php	/^    $thread_sha   = $DIthread_sha;$/;"	v
+thread_title	functions.php	/^        $thread_title         = $value["thread_title"];$/;"	v
+thread_url	functions.php	/^        $thread_url           = $value["thread_url"];$/;"	v
+timeTest	functions.php	/^function timeTest($point){$/;"	f
+timeView	functions.php	/^function timeView(){$/;"	f
+times	thread.php	/^$times = [];$/;"	v
+updeateToDeleatFlag	functions.php	/^function updeateToDeleatFlag($dbHandle, $thread_sha, $prepareSt){$/;"	f
+upper	ankaertest.php	/^                    $upper   = array_slice($reArray, 0, $reArrayIndex + 2) ; $/;"	v
+upper	ankaertest.php	/^            $upper           = array_slice($reArray, 0, $reArrayIndex + 1) ; $/;"	v
+upper	functions.php	/^                $upper   = array_slice($reArray, 0, $reArrayIndex + 1) ; $/;"	v
+upper	functions.php	/^                $upper   = array_slice($reArray, 0, ($reArrayIndex + 1 ) + $sameCount) ; $/;"	v
+url	articleajax.php	/^            $url      = $imgData[$i]["img_url"];$/;"	v
+w	functions.php	/^        $w = $inputImgSize[0] * $rasio;$/;"	v
