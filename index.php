@@ -1,7 +1,8 @@
 <?php
 session_start();
 date_default_timezone_set('Asia/Tokyo');
-require_once(dirname(__file__) . '/functions.php');
+require_once(dirname(dirname(dirname(__file__))) . '/functions.php');
+// require_once(dirname(__file__) . '/functions.php');
 
 $logingData = getLoggingData(getPDO());
 
@@ -10,7 +11,7 @@ if(isset($_POST["login"])){
     if($logingData["user"] === $_POST["user"] && sha1($_POST["password"]) === $logingData["password"]){
         session_regenerate_id(true);
         $_SESSION["USERID"] = sha1($logingData["user"].$logingData["password"]);
-        header("Location: main.php");
+        header("Location: menu.php");
         exit;
     } 
 } 

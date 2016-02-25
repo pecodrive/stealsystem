@@ -22,8 +22,7 @@ $censorList = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);
 $regexList  = getRegex(getPDO(), $queryList["SELECT_REGEX"]);
 $fixedList  = getFix(getPDO(), $queryList["SELECT_FIX"]); 
 
-updeateToDeleatFlag(getPDO(), $threadSha["thread_sha"], $queryList["UPDATE_THREAD_DELEATE_FLAG"]);
-updeateToDeleatFlag(getPDO(), $threadSha["thread_sha"], $queryList["UPDATE_RES_DELEATE_FLAG"]);
+updeateToSuspendFlag(getPDO(), $threadSha["thread_sha"], $queryList["UPDATE_THREAD_SUSPEND_FLAG"]);
 
 $jsonData = json_encode($threadSha);
 header( "Content-Type: text/html; X-Content-Type-Options: nosniff; charset=utf-8" );

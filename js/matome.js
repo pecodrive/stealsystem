@@ -1,12 +1,11 @@
 $(window).on("load",function(){
 
-var siteUrl = "http://192.168.56.10/stealsystem_op/";
 
     $(document).on("click",".threadTitle",function(){
         var threadSha = this.className.split(" ")[1];
         var rootSpan = "." + threadSha + " .responcewp";
         if(global.threadSwith[threadSha] === false){
-            var data = JSON.stringify(threadSha);
+            var data = JSON.stringify({thread_sha:threadSha, nonce:global.nonce});
             $.ajax({
                 type: "POST",
                 url: global.scriptUrl + "resajax.php",
@@ -54,7 +53,7 @@ var siteUrl = "http://192.168.56.10/stealsystem_op/";
         //     }
         // }
         var ar = global.categorychoiced[threadSha];
-        var data = JSON.stringify({threadsha:threadSha, choiced:global.choiced[threadSha], retitle:reTitle, category:ar});
+        var data = JSON.stringify({thread_sha:threadSha, choiced:global.choiced[threadSha], retitle:reTitle, category:ar, nonce:global.nonce});
 
         $.ajax({
             type: "POST",
@@ -125,7 +124,7 @@ var siteUrl = "http://192.168.56.10/stealsystem_op/";
 
     $(document).on("click",".submited",function(){
         var threadSha = this.className.split(" ")[0];
-        var data = JSON.stringify({thread_sha:threadSha});
+        var data = JSON.stringify({thread_sha:threadSha, nonce:global.nonce});
         if(global.deleted[threadSha] === true){
             $("."+threadSha + " .submited").css("background-color","#cccccc");
             $.ajax({
@@ -134,7 +133,7 @@ var siteUrl = "http://192.168.56.10/stealsystem_op/";
                 url: global.scriptUrl + "deleteajax.php",
                 success: function(responce){
                     console.log(responce);
-                    $("."+threadSha + " .submited").css("background-color","#aa0000");
+                    $("."+threadSha + " .submited").css("background-color","#aa0022");
                 },
                 complete:function(){
                     $("."+threadSha + " .submited").css("background-color","#aa0000");
@@ -143,13 +142,31 @@ var siteUrl = "http://192.168.56.10/stealsystem_op/";
         }
     });
 
+    $(document).on("click",".suspend",function(){
+        var threadSha = this.className.split(" ")[0];
+        var data = JSON.stringify({thread_sha:threadSha, nonce:global.nonce});
+        $("."+threadSha + " .suspend").css("background-color","#cccccc");
+        $.ajax({
+            type: "POST",
+            data: data,
+            url: global.scriptUrl + "suspendajax.php",
+            success: function(responce){
+                console.log(responce);
+                $("."+threadSha + " .suspend").css("background-color","#aa0022");
+            },
+            complete:function(){
+                $("."+threadSha + " .suspend").css("background-color","#aa0000");
+            }
+        });
+    });
+
     $(document).on("click",".manualcensor",function(){
         var threadSha = this.className.split(" ")[0];
         var resSha = this.className.split(" ")[1];
         var censorWord = $(":text[name=" + resSha + "word]").val();
         var beCensor   = $(":text[name=" + resSha + "becensor]").val();
         var isInsert   = $("[name=" + resSha + "swich]:checked").val();
-        var data = JSON.stringify({res_sha : resSha, censor_word : censorWord, be_censor : beCensor, is_insert : isInsert});
+        var data = JSON.stringify({res_sha:resSha, censor_word:censorWord, be_censor:beCensor, is_insert:isInsert, nonce:global.nonce});
         $("." + resSha + " .manualcensor").css("background-color","#cccccc");
         $("#" + resSha).css("background-color","#cccccc");
         

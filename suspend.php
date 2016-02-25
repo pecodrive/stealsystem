@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 if (!isset($_SESSION["USERID"])) {
@@ -16,7 +18,7 @@ $censorList      = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);
 $regexList       = getRegex(getPDO(), $queryList["SELECT_REGEX"]);
 $fixedList       = getFix(getPDO(), $queryList["SELECT_FIX"]); 
 $procLockData    = getProcLockData(getPDO(), $queryList["SELECT_PROCLOCK"]);
-$threadData      = getThreadDataAll(getPDO(), $queryList["SELECT_THREAD_FOR_MAIN"]);
+$threadData      = getThreadDataAll(getPDO(), $queryList["SELECT_THREAD_FOR_SUSPEND"]);
 $threadDataCount = count($threadData);
 $nonce           = wp_create_nonce();
 $error           = getError(getPDO(),$queryList["SELECT_ERROR"]);
@@ -88,7 +90,7 @@ echo "}";
 </script>
 </head>
 <body>
-<div><?php echo "すべて"; ?></div>
+<div><?php echo "保留"; ?></div>
 <div id="thread">
 <?php 
 $countThreadData = count($threadData);

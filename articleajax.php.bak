@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -53,7 +54,6 @@ foreach ($sortedResData as $value) {
             $filename = $imgData[$i]["img_name"];
             $url      = imgurCheck($imgData[$i]["img_link"], $imgData[$i]["extention"]);
             $savePath = $fixedList["imgSavePath"].$filename;
-            $gifsavePath = $fixedList["imgSavePath"]."tumb150_".$filename;
 
             $dir = "/var/www/html/wp-content/uploads/";
             $savePathTumb = $dir."tumb150_".$filename;
@@ -66,9 +66,8 @@ foreach ($sortedResData as $value) {
                     imagejpeg($newImg, $savePath, 50);
                     imagedestroy($newImg);
 
-                    $tumbInputImgSize = getimagesize($savePath);
                     $imgTumb = imagecreatefromjpeg($dir.$filename);
-                    $newImgTumb = sizeSetTumb($tumbInputImgSize, $imgTumb);
+                    $newImgTumb = sizeSetTumb($inputImgSize, $imgTumb);
                     imagejpeg($newImgTumb, $savePathTumb, 50);
                     imagedestroy($newImgTumb);
                 }elseif($inputImgSize["mime"] === "image/png"){
@@ -77,18 +76,17 @@ foreach ($sortedResData as $value) {
                     imagepng($newImg, $savePath, 9);
                     imagedestroy($newImg);
 
-                    $tumbInputImgSize = getimagesize($savePath);
                     $imgTumb = imagecreatefrompng($dir.$filename);
-                    $newImgTumb = sizeSetTumb($tumbInputImgSize, $imgTumb);
+                    $newImgTumb = sizeSetTumb($inputImgSize, $imgTumb);
                     imagejpeg($newImgTumb, $savePathTumb, 50);
                     imagedestroy($newImgTumb);
                 }elseif($inputImgSize["mime"] === "image/gif"){
                     $img = file_get_contents($url);
                     file_put_contents($savePath, $img);
 
-                    $imgTumb = imagecreatefromgif($dir.$filename);
+                    $img = imagecreatefromgif($dir.$filename);
                     $newImgTumb = sizeSetTumb($inputImgSize, $imgTumb);
-                    imagegif($newImgTumb, $savePathTumb);
+                    imagegif($newImg, $savePathTumb);
                     imagedestroy($newImgTumb);
                 }
             }else{

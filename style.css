@@ -1,5 +1,5 @@
-    *{
-        box-sizing: border-box;
+*{
+    box-sizing: border-box;
     }
     img{
         max-width: 400px;
@@ -8,16 +8,25 @@
     span{
         float: left;
         }
-    #thread div{
+    #thread{
+        width: 100%;
+        float: left;
+        overflow: hidden;
+    }
+    div.threadbotton,
+    div.threadDiv,
+    div.html,
+    div.category{
         width: 100%;
         margin: 0 0 10px 0;
         padding: 20px;
         border: 1px solid #000;
         cursor: pointer;
         float: left;
-
     }
-
+div.group{
+    display:none;
+}
     span.endres{
         margin:1% 1% 0 3%;
         width:96%;
@@ -38,13 +47,22 @@
         padding: 0px 20px 10px 20px;
 
     }
-
+div.menu{
+    margin:5px;
+    padding:5px;
+    border:1px solid #000;
+    font-size:200%;
+}
     span.deleted,
-    span.submited{
+    span.submited,
+    span.suspend{
         margin:0 2% 0 0;
         width:15%;
         padding: 10px 20px;
         border:1px solid #ccc;
+        float:right;
+    }
+    span.suspend{
         float:left;
     }
     span.threadTitle{
@@ -80,6 +98,7 @@
     }
     span.word,
     span.becensor{
+        background:#ddffff;
         margin:0 5px 0 0;
         float: left;
     }

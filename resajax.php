@@ -1,17 +1,28 @@
 <?php
 
-require_once(dirname(__file__) . '/functions.php');
+session_start();
+if (!isset($_SESSION["USERID"])) {
+    header("Location: logout.php");
+    exit;
+}
+
+require_once(dirname(dirname(dirname(__file__))) . '/functions.php');
 require_once(dirname(dirname(__file__)) . '/wp-load.php');
+
+$request        = json_decode( file_get_contents( "php://input" ) , true );
+if(!wp_verify_nonce($request["nonce"])){
+    die();
+}
+
 date_default_timezone_set('Asia/Tokyo');
 
-$requestThreadSha        = json_decode( file_get_contents( "php://input" ) , true );
 $queryList               = getSQLQuery(getPDO());
 $censorList              = getCensorList(getPDO(), $queryList["SELECT_CENSOR"]);
 $regexList               = getRegex(getPDO(), $queryList["SELECT_REGEX"]);
 $fixedList               = getFix(getPDO(), $queryList["SELECT_FIX"]); 
-$resData                 = getResData(getPDO(), $requestThreadSha, $queryList["SELECT_RES"]); 
+$resData                 = getResData(getPDO(), $request["thread_sha"], $queryList["SELECT_RES"]); 
 $sortedResData           = sortResByAnkaer($resData);
-$threadData              = getThreadDataBySha(getPDO(), $requestThreadSha, $queryList["SELECT_THREAD_BY_THREADSHA"]); 
+$threadData              = getThreadDataBySha(getPDO(), $request["thread_sha"], $queryList["SELECT_THREAD_BY_THREADSHA"]); 
 $menuData                = getMenuDefaultName(getPDO(), $threadData["menu_id"], $queryList["SELECT_MENU_FOR_MENUID"]);
 $html                    = "";
 $resSha                  = null;
@@ -47,14 +58,17 @@ for ($k=0; $k < $countOfSortedResData; $k++) {
 
     $html .= "<span id=\"{$sortedResData[$k]["res_sha"]}\" class=\"{$sortedResData[$k]["thread_sha"]} {$sortedResData[$k]["res_sha"]} responce\">"; 
     $imgData = unserialize($sortedResData[$k]["res_imgtag"]);
+    // var_dump($imgData);
     if(!empty($imgData)){
         foreach ($imgData as $value) {
-            $html .= "<img src=\"{$value["img_link"]}\">";
+            $reImgLink = imgurCheck($value["img_link"], $value["extention"]);
+            $html .= "<img src=\"{$reImgLink}\">";
         } 
         $body = "{$sortedResData[$k]["res_rowbody"]}"; 
     }else{
         $body = "{$sortedResData[$k]["res_body"]}"; 
     }
+    $body = youtube($body);
     if($sortedResData[$k]["censored"]){
         $html .= "<font style=\"font-weight:900;color:#ff4444;\">{$body}</font>";
     }else{
@@ -62,9 +76,9 @@ for ($k=0; $k < $countOfSortedResData; $k++) {
     }
     $html .= "</span>"; 
 }
-$html .= "<div class=\"threadbotton {$requestThreadSha}\">"; 
+$html .= "<div class=\"threadbotton {$request["thread_sha"]}\">"; 
 $html .= "<p>記事を作る</p></div>"; 
-$html .= "<div class=\"html {$requestThreadSha}\"></div>"; 
+$html .= "<div class=\"html {$request["thread_sha"]}\"></div>"; 
 
 $args = array(
     'type'                     => 'post',
@@ -73,9 +87,9 @@ $args = array(
 ); 
 $cats = get_categories($args);
 
-$category = "<div>\n";
+$category = "<div class=\"category\">\n";
 for ($i=0; $i < count($cats); $i++) {
-    $category .= "<span class=\"{$requestThreadSha} category\">{$cats[$i]->name}</span>\n";
+    $category .= "<span class=\"{$request["thread_sha"]} category\">{$cats[$i]->name}</span>\n";
 }
 $category .= "</div>";
 
